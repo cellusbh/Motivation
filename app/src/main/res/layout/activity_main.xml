@@ -51,7 +51,7 @@
         android:layout_below="@id/linear_menu"
         android:layout_centerHorizontal="true"
         android:padding="32dp"
-        android:text="Olá, Kotlin!" />
+        android:text="@string/hello" />
 
     <TextView
         android:textColor="@color/black"

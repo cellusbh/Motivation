@@ -12,6 +12,7 @@ import com.example.motivation.data.Mock
 import com.example.motivation.databinding.ActivityMainBinding
 import com.example.motivation.infra.MotivationConstants
 import com.example.motivation.infra.SecurityPreferences
+import java.util.Locale
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -56,7 +57,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun handleNextPhrase() {
-        binding.textPhrase.text = Mock().getPhrase(categoryID)
+        binding.textPhrase.text = Mock().getPhrase(categoryID, Locale.getDefault().language)
     }
 
     private fun handleFilter(id: Int) {
@@ -83,7 +84,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun handleUserName() {
         val name = SecurityPreferences(this).getString(MotivationConstants.KEY.USER_NAME)
-        binding.textUserName.text = "Olá, $name!"
+        binding.textUserName.text = "${getString(R.string.hello)}, $name!"
     }
 
 }
